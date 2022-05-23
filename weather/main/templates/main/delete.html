@@ -1,0 +1,9 @@
+{%  extends 'main/weather_page.html' %}
+
+{% content %}
+    <form action="{{ get_delete_url }}" method="post">
+        {% csrf_token %}
+        <h3>Are you sure you want to delete "{{ all_info.name }}" POST?</h3>
+        <a href="{{ all_info.get_absolute_url }}">Cancel</a>
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </form>

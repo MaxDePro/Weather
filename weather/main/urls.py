@@ -3,6 +3,6 @@ from .views import *
 
 
 urlpatterns = [
-    path('', add_city),
-    # path('<name:str>/delete/', DeleteCity.as_view(), 'delete_city_url')
+    path('', add_city, name='main_page'),
+    path('<str:name>/delete', DeleteCity.as_view(), name='delete_city_url'),
 ]

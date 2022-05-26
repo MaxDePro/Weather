@@ -15,8 +15,6 @@ class CityForm(forms.ModelForm):
             })
         }
 
-
-
     def clean_name(self):
         new_name = self.cleaned_data['name'].lower()
         if Cities.objects.filter(name__iexact=new_name).count():
